@@ -1,13 +1,18 @@
 <template>
   <div class="home-wrapper">
     <HomePage />
+    <Services />
   </div>
 </template>
 
 <script>
 import HomePage from "./Home/index";
+import Services from "./Services";
 export default {
-  components: { HomePage },
+  components: {
+    HomePage,
+    Services,
+  },
   data() {
     return {};
   },
