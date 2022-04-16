@@ -12,8 +12,8 @@
         paginationPadding="5"
         autoplay
         loop
-        autoplayTimeout="5000"
-        speed="2000"
+        :autoplayTimeout="5000"
+        :speed="2000"
       >
         <slide v-for="feedback in feedbacks" :key="`rec-${feedback.id}`">
           <div class="recommend-slide">

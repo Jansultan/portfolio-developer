@@ -1,15 +1,29 @@
 <template>
   <div class="main-block">
     <div class="main-block__inner">
-      <router-view />
+      <Loader v-if="load" />
+      <router-view v-else />
     </div>
   </div>
 </template>
 
 <script>
+// import debounce from "lodash/debounce";
+import Loader from "../components/Loader.vue";
 export default {
+  components: { Loader },
   data() {
-    return {};
+    return {
+      load: false,
+    };
+  },
+  watch: {
+    "$route.name"() {
+      this.load = true;
+      setTimeout(() => {
+        this.load = false;
+      }, 500);
+    },
   },
 };
 </script>

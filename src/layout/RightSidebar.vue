@@ -47,7 +47,6 @@ export default {
   width: 108px;
   position: absolute;
   right: 0;
-  z-index: 9999;
   .right-sidebar {
     width: 108px;
     height: calc(100vh - 0px);

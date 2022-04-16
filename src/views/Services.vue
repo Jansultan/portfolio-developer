@@ -192,6 +192,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     margin-top: 50px;
     margin-left: -10px;
     .services-info__block {
