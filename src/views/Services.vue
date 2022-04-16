@@ -69,6 +69,69 @@
           </div>
         </div>
       </div>
+      <div class="services-info__block">
+        <div class="services-info__block__inner">
+          <div class="info__block-box">
+            <gameDevelopment class="icon" />
+            <h4>game design</h4>
+            <span>Character Design, Props & Objects</span>
+          </div>
+          <div class="info__block-box-back">
+            <h4>game design</h4>
+            <span
+              >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
+              nulla diam in ac dictum a urna viverra morbi.</span
+            >
+            <p>
+              <a href="#!"
+                >ORDER NOW <b-icon icon="arrow-right-short" scale="1.3"></b-icon
+              ></a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="services-info__block">
+        <div class="services-info__block__inner">
+          <div class="info__block-box">
+            <photographer class="icon" />
+            <h4>photography</h4>
+            <span>portrait, product photography</span>
+          </div>
+          <div class="info__block-box-back">
+            <h4>photography</h4>
+            <span
+              >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
+              nulla diam in ac dictum a urna viverra morbi.</span
+            >
+            <p>
+              <a href="#!"
+                >ORDER NOW <b-icon icon="arrow-right-short" scale="1.3"></b-icon
+              ></a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="services-info__block">
+        <div class="services-info__block__inner">
+          <div class="info__block-box">
+            <addPopUp class="icon" />
+            <h4>advertising</h4>
+            <span>Voice Over, Beat Making</span>
+          </div>
+          <div class="info__block-box-back">
+            <h4>advertising</h4>
+            <span
+              >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
+              nulla diam in ac dictum a urna viverra morbi.</span
+            >
+            <p>
+              <a href="#!"
+                >ORDER NOW <b-icon icon="arrow-right-short" scale="1.3"></b-icon
+              ></a>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -77,12 +140,18 @@
 import coding from "../icons/coding.vue";
 import uiux from "../icons/uiux.vue";
 import microphone from "../icons/microphone.vue";
+import gameDevelopment from "../icons/gameDevelopment.vue";
+import photographer from "../icons/photographer.vue";
+import addPopUp from "../icons/addPopUp.vue";
 
 export default {
   components: {
     coding,
     uiux,
     microphone,
+    gameDevelopment,
+    photographer,
+    addPopUp,
   },
   data() {
     return {};
