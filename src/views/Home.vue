@@ -4,6 +4,8 @@
     <Services />
     <Recommendations />
     <Education />
+    <Portfolio />
+    <Blog />
   </div>
 </template>
 
@@ -12,12 +14,17 @@ import HomePage from "./Home/index";
 import Services from "./Services";
 import Recommendations from "./Recommendations";
 import Education from "./Education";
+import Portfolio from "./Portfolio";
+import Blog from "./Blog";
+
 export default {
   components: {
     HomePage,
     Services,
     Recommendations,
     Education,
+    Portfolio,
+    Blog,
   },
   data() {
     return {};

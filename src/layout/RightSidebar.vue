@@ -32,7 +32,7 @@ export default {
         { title: "Education", name: "education", icon: "person-fill" },
         { title: "Portfolios", name: "portfolios", icon: "bag-dash-fill" },
         { title: "Blog", name: "blog", icon: "vector-pen" },
-        { title: "Contact", name: "contact", icon: "chat-left-fill" },
+        // { title: "Contact", name: "contact", icon: "chat-left-fill" },
       ],
     };
   },
