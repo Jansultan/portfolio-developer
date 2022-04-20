@@ -1,6 +1,6 @@
 <template>
   <div class="blog-container">
-    <h1>Blog</h1>
+    <h1 :class="{ 'dark-700': $store.state.isLightmode }">Blog</h1>
     <p>
       Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
       Velit officia consequat duis enim velit mollit. lorem ipsum
@@ -15,9 +15,12 @@
         tag="article"
         style="width: 310px"
         class="mr-2 ml-2"
+        :class="{ 'dark-700': $store.state.isLightmode }"
       >
         <div class="blog-content__body">
-          <h4>{{ blog.title }}</h4>
+          <h4 :class="{ 'dark-color': $store.state.isLightmode }">
+            {{ blog.title }}
+          </h4>
           <p>{{ blog.text }}</p>
           <span>
             <a :href="blog.url"

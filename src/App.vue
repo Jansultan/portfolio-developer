@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :class="{ 'dark-900': $store.state.isLightmode }">
     <div class="app-container">
       <LeftSidebar />
       <Main />
@@ -30,6 +30,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   margin-top: 0;
   display: flex;
+  background: #e1e1e1;
+  transition: all 300ms ease-in 0s;
   .app-container {
     max-width: 1440px;
     margin: 0 auto;

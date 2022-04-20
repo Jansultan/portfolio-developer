@@ -1,6 +1,9 @@
 <template>
   <div class="home-container">
-    <div class="home-container-block">
+    <div
+      class="home-container-block"
+      :class="{ 'dark-700': $store.state.isLightmode }"
+    >
       <div class="inner-block">
         <div class="container-animattion">
           <div class="cube" v-for="i in 8" :key="`cube-${i}`"></div>
@@ -10,7 +13,7 @@
         </div>
         <div class="block-user">
           <div class="user-info">
-            <h1>
+            <h1 :class="{ 'dark-700': $store.state.isLightmode }">
               I’m Zhansultan Shagdatuly
               <span style="color: var(--v-color-yellow-700)">Front-end</span>
               Developer
@@ -51,7 +54,7 @@ export default {
   &-block {
     align-items: end;
     overflow: hidden;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--v-color-white);
     transition: all 0.4s ease-in-out 0s;
     padding-top: 0px;
     padding-right: 0px;
@@ -62,7 +65,7 @@ export default {
     .inner-block {
       width: calc(100% - 100px);
       z-index: 1;
-      color: #fff;
+      color: var(--v-color-white);
       word-break: break-word;
       margin: 0 50px;
       .container-animattion {

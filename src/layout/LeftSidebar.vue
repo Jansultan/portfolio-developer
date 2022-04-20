@@ -1,6 +1,6 @@
 <template>
   <div class="left-sidebar-container">
-    <div class="left-sidebar">
+    <div class="left-sidebar" :class="{ 'dark-700': $store.state.isLightmode }">
       <div class="left-sidebar-inner">
         <b-avatar
           badge
@@ -8,61 +8,39 @@
           badge-variant="green"
           size="150px"
         ></b-avatar>
-        <h3>Zhansultan Zhagdatuly</h3>
+        <h3 :class="{ 'dark-700': $store.state.isLightmode }">
+          Zhansultan Zhagdatuly
+        </h3>
         <span class="user-job">Font-end Developer</span>
         <div class="social-link">
-          <a href="#!" style="font-size: 14px">
+          <a
+            v-for="link in socialLinks"
+            :key="`social-link-${link.id}`"
+            :href="link.url"
+            target="_blank"
+            style="font-size: 14px"
+          >
             <b-icon
-              icon="facebook"
+              :icon="link.icon"
               class="rounded-circle"
-              variant="light"
-            ></b-icon>
-          </a>
-          <a href="#!" style="font-size: 14px">
-            <b-icon
-              icon="instagram"
-              class="rounded-circle"
-              variant="light"
-            ></b-icon>
-          </a>
-          <a href="#!" style="font-size: 14px">
-            <b-icon
-              icon="twitter"
-              class="rounded-circle"
-              variant="light"
-            ></b-icon>
-          </a>
-          <a href="#!" style="font-size: 14px">
-            <b-icon
-              icon="github"
-              class="rounded-circle"
-              variant="light"
-            ></b-icon>
-          </a>
-          <a href="#!" style="font-size: 14px">
-            <b-icon
-              icon="youtube"
-              class="rounded-circle"
-              variant="light"
-            ></b-icon>
-          </a>
-          <a href="#!" style="font-size: 14px">
-            <b-icon
-              icon="globe"
-              class="rounded-circle"
-              variant="light"
+              :variant="link.light"
             ></b-icon>
           </a>
         </div>
-        <div class="block-other-info">
+        <div
+          class="block-other-info"
+          :style="`border-color: ${
+            $store.state.isLightmode ? 'rgba(255, 255, 255, 0.2);' : ''
+          }`"
+        >
           <div class="personal-info">
             <div class="personal-info-inner">
               <span>Age:</span>
-              <p>25</p>
+              <p :class="{ 'dark-700': $store.state.isLightmode }">25</p>
             </div>
             <div class="personal-info-inner">
               <span>Residence:</span>
-              <p>AK</p>
+              <p :class="{ 'dark-700': $store.state.isLightmode }">KZ</p>
             </div>
             <div class="personal-info-inner">
               <span>Freelance:</span>
@@ -70,20 +48,31 @@
             </div>
             <div class="personal-info-inner">
               <span>Address:</span>
-              <p>Almaty, Kazakhstan</p>
+              <p :class="{ 'dark-700': $store.state.isLightmode }">
+                Almaty, Kazakhstan
+              </p>
             </div>
           </div>
-          <div class="border-line"></div>
+          <div
+            class="border-line"
+            :style="`border-color: ${
+              $store.state.isLightmode ? 'rgba(255, 255, 255, 0.2);' : ''
+            }`"
+          ></div>
           <div class="sidebar-column">
-            <h4>Languages</h4>
+            <h4 :class="{ 'dark-700': $store.state.isLightmode }">Languages</h4>
             <div
               class="sidebar-column__inner"
               v-for="lang in languages"
               :key="`lang-${lang.id}`"
             >
               <div class="sidebar-column__header">
-                <span>{{ lang.name }}</span>
-                <p>{{ lang.value }}%</p>
+                <span :class="{ 'dark-color': $store.state.isLightmode }">{{
+                  lang.name
+                }}</span>
+                <p :class="{ 'dark-color': $store.state.isLightmode }">
+                  {{ lang.value }}%
+                </p>
               </div>
               <div class="progress-bar-border">
                 <b-progress
@@ -93,16 +82,25 @@
                 ></b-progress>
               </div>
             </div>
-            <div class="border-line"></div>
-            <h4>Skills</h4>
+            <div
+              class="border-line"
+              :style="`border-color: ${
+                $store.state.isLightmode ? 'rgba(255, 255, 255, 0.2);' : ''
+              }`"
+            ></div>
+            <h4 :class="{ 'dark-700': $store.state.isLightmode }">Skills</h4>
             <div
               class="sidebar-column__inner"
               v-for="skill in skills"
               :key="`skill-${skill.id}`"
             >
               <div class="sidebar-column__header">
-                <span>{{ skill.name }}</span>
-                <p>{{ skill.value }}%</p>
+                <span :class="{ 'dark-color': $store.state.isLightmode }">{{
+                  skill.name
+                }}</span>
+                <p :class="{ 'dark-color': $store.state.isLightmode }">
+                  {{ skill.value }}%
+                </p>
               </div>
               <div class="progress-bar-border">
                 <b-progress
@@ -112,8 +110,15 @@
                 ></b-progress>
               </div>
             </div>
-            <div class="border-line"></div>
-            <h4>Extra Skills</h4>
+            <div
+              class="border-line"
+              :style="`border-color: ${
+                $store.state.isLightmode ? 'rgba(255, 255, 255, 0.2);' : ''
+              }`"
+            ></div>
+            <h4 :class="{ 'dark-700': $store.state.isLightmode }">
+              Extra Skills
+            </h4>
             <div class="extra-skills">
               <b-badge
                 v-for="extraSkill in extraSkills"
@@ -124,7 +129,31 @@
                 >{{ extraSkill.name }}</b-badge
               >
             </div>
-            <div class="border-line"></div>
+            <div
+              class="border-line"
+              :style="`border-color: ${
+                $store.state.isLightmode ? 'rgba(255, 255, 255, 0.2);' : ''
+              }`"
+            ></div>
+            <h4 :class="{ 'dark-700': $store.state.isLightmode }">
+              UI frameworks
+            </h4>
+            <div class="extra-skills">
+              <b-badge
+                v-for="uiFrame in uiFrameworks"
+                :key="`uiFrame-${uiFrame.id}`"
+                pill
+                variant="info"
+                class="badge__info"
+                >{{ uiFrame.name }}</b-badge
+              >
+            </div>
+            <div
+              class="border-line"
+              :style="`border-color: ${
+                $store.state.isLightmode ? 'rgba(255, 255, 255, 0.2);' : ''
+              }`"
+            ></div>
           </div>
         </div>
         <b-button variant="warning" style="width: 100%">
@@ -146,10 +175,10 @@ export default {
         { id: 3, name: "Russian", value: 80 },
       ],
       skills: [
-        { id: 1, name: "Html", value: 100 },
-        { id: 2, name: "CSS", value: 100 },
-        { id: 3, name: "JavaScript", value: 90 },
-        { id: 4, name: "VUE", value: 90 },
+        { id: 1, name: "Html5", value: 100 },
+        { id: 2, name: "CSS3", value: 100 },
+        { id: 3, name: "JavaScript (ES6+)", value: 90 },
+        { id: 4, name: "VUE 2/3", value: 90 },
         { id: 5, name: "Git", value: 75 },
         { id: 6, name: "TypeScript", value: 70 },
       ],
@@ -157,9 +186,40 @@ export default {
         { id: 1, name: "Bootstrap" },
         { id: 2, name: "Vuetify" },
         { id: 3, name: "Sass/Scss/Less" },
-        { id: 4, name: "Gulp, Webpack Grunt" },
-        { id: 5, name: "Git Knowldge" },
-        { id: 6, name: "Bitbucket" },
+        { id: 4, name: "Webpack / Gulp / Grunt" },
+        { id: 5, name: "npm / yarn" },
+        { id: 6, name: "github / gitlub / bitbucket" },
+        { id: 7, name: "AJAX/JSON" },
+        { id: 8, name: "fetch/axios, WebSocket" },
+        { id: 9, name: "vue-router" },
+        { id: 10, name: "vuex" },
+        { id: 11, name: "vue-cli" },
+        { id: 12, name: "Composition api" },
+        { id: 13, name: "flex / CSSGrid" },
+        { id: 14, name: "lodash / moment" },
+        { id: 15, name: "FIGMA" },
+        { id: 16, name: "Jira / YouTrack" },
+        { id: 17, name: "swagger RESTful web API" },
+      ],
+      uiFrameworks: [
+        { id: 1, name: "BootstrapVue" },
+        { id: 2, name: "Vuetify" },
+        { id: 3, name: "Vue Material" },
+        { id: 4, name: "Vue Material Kit" },
+        { id: 5, name: "Element UI" },
+      ],
+      socialLinks: [
+        { id: 1, icon: "facebook", variant: "light", url: "#!" },
+        { id: 2, icon: "instagram", variant: "light", url: "#!" },
+        { id: 3, icon: "twitter", variant: "light", url: "#!" },
+        {
+          id: 4,
+          icon: "github",
+          variant: "light",
+          url: "https://github.com/zhaks96",
+        },
+        { id: 5, icon: "youtube", variant: "light", url: "#!" },
+        { id: 6, icon: "globe", variant: "light", url: "#!" },
       ],
     };
   },
@@ -179,6 +239,7 @@ export default {
     width: 290px;
     height: 100%;
     background: var(--v-color-white);
+    transition: all 300ms ease-in 0s;
     &-inner {
       padding: 50px 40px 0;
       width: 100%;
@@ -280,6 +341,7 @@ export default {
               text-transform: capitalize;
               font-feature-settings: "calt" off, "kern" off;
               color: var(--v-color-black-800);
+              padding: 0 4px;
             }
 
             & > p {

@@ -1,49 +1,74 @@
 <template>
   <div class="education-container">
-    <h1>Education</h1>
+    <h1 :class="{ 'dark-color': $store.state.isLightmode }">Education</h1>
     <p>
       Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
       Velit officia consequat duis enim velit mollit. lorem ipsum
     </p>
-    <div class="education-body">
+    <div
+      class="education-body"
+      :class="{ 'dark-700': $store.state.isLightmode }"
+    >
       <div
         class="education-body__inner"
         v-for="education in educations"
         :key="`education-${education.id}`"
+        :style="`border-color: ${
+          $store.state.isLightmode ? 'rgba(255, 255, 255, 0.2);' : ''
+        }`"
       >
         <div class="education-block1">
-          <h4>{{ education.place }}</h4>
+          <h4 :class="{ 'dark-color': $store.state.isLightmode }">
+            {{ education.place }}
+          </h4>
           <div class="education-study">
             <p>{{ education.type }}</p>
             <span>{{ education.date }}</span>
           </div>
         </div>
         <div class="education-block2">
-          <h4>{{ education.date }}</h4>
+          <h4 :class="{ 'dark-color': $store.state.isLightmode }">
+            {{ education.date }}
+          </h4>
           <p>{{ education.dscr }}</p>
         </div>
       </div>
     </div>
-    <h1 style="margin-top: 70px">Work History</h1>
+    <h1
+      style="margin-top: 70px"
+      :class="{ 'dark-color': $store.state.isLightmode }"
+    >
+      Work History
+    </h1>
     <p>
       Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
       Velit officia consequat duis enim velit mollit. lorem ipsum
     </p>
-    <div class="education-body">
+    <div
+      class="education-body"
+      :class="{ 'dark-700': $store.state.isLightmode }"
+    >
       <div
         class="education-body__inner"
         v-for="work in works"
         :key="`work-${work.id}`"
+        :style="`border-color: ${
+          $store.state.isLightmode ? 'rgba(255, 255, 255, 0.2);' : ''
+        }`"
       >
         <div class="education-block1">
-          <h4>{{ work.place }}</h4>
+          <h4 :class="{ 'dark-color': $store.state.isLightmode }">
+            {{ work.place }}
+          </h4>
           <div class="education-study">
             <p>{{ work.type }}</p>
             <span>{{ work.date }}</span>
           </div>
         </div>
         <div class="education-block2">
-          <h4>{{ work.date }}</h4>
+          <h4 :class="{ 'dark-color': $store.state.isLightmode }">
+            {{ work.date }}
+          </h4>
           <p>{{ work.dscr }}</p>
         </div>
       </div>

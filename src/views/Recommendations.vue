@@ -1,6 +1,6 @@
 <template>
   <div class="recommend-container">
-    <h1>recommendations</h1>
+    <h1 :class="{ 'dark-color': $store.state.isLightmode }">recommendations</h1>
     <p>
       Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
       Velit officia consequat duis enim velit mollit. lorem ipsum
@@ -16,7 +16,10 @@
         :speed="2000"
       >
         <slide v-for="feedback in feedbacks" :key="`rec-${feedback.id}`">
-          <div class="recommend-slide">
+          <div
+            class="recommend-slide"
+            :class="{ 'dark-700': $store.state.isLightmode }"
+          >
             <b-form-rating
               id="rating-no-border"
               no-border
@@ -24,13 +27,18 @@
               readonly
               color="#FFB400"
               style="width: 130px"
+              :class="{ 'dark-700': $store.state.isLightmode }"
             ></b-form-rating>
-            <h4>{{ feedback.title }}</h4>
+            <h4 :class="{ 'dark-color': $store.state.isLightmode }">
+              {{ feedback.title }}
+            </h4>
             <span>{{ feedback.text }}</span>
             <div class="recommend-slide-footer">
               <b-avatar size="80px" :src="feedback.user.ava"></b-avatar>
               <div class="recommend-slide-footer__info">
-                <h4>{{ feedback.user.fio }}</h4>
+                <h4 :class="{ 'dark-color': $store.state.isLightmode }">
+                  {{ feedback.user.fio }}
+                </h4>
                 <p>{{ feedback.user.job }}</p>
               </div>
             </div>

@@ -60,3 +60,29 @@ body{
 .text-black{
   color: var(--v-color-black-900) !important;
 }
+
+// dark theme
+.dark-900{
+  color: var(--v-color-white)!important;
+  background-color: var(--v-color-black-900)!important;
+  transition: all 300ms ease-in 0s;
+}
+.dark-800{
+  color: var(--v-color-white)!important;
+  background-color: var(--v-color-black-800)!important;
+  transition: all 300ms ease-in 0s;
+}
+.dark-700{
+  color: var(--v-color-white)!important;
+  background-color: var(--v-color-black-700)!important;
+  transition: all 300ms ease-in 0s;
+}
+.dark-600{
+  color: var(--v-color-white)!important;
+  background-color: var(--v-color-black-600)!important;
+  transition: all 300ms ease-in 0s;
+}
+
+.dark-color{
+  color: var(--v-color-white)!important;
+}

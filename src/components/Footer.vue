@@ -1,6 +1,11 @@
 <template>
-  <div class="footer-container">
-    <p>@{{ new Date().getFullYear() }} All Rights Almaty.Kazakhstan</p>
+  <div
+    class="footer-container"
+    :class="{ 'dark-700': $store.state.isLightmode }"
+  >
+    <p :class="{ 'dark-color': $store.state.isLightmode }">
+      @{{ new Date().getFullYear() }} All Rights Almaty.Kazakhstan
+    </p>
   </div>
 </template>
 

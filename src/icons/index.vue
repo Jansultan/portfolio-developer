@@ -9,7 +9,7 @@
 
 <script>
 const icons = {
-  contrast: require("./contrast.vue"),
+  contrast: require("./contrastLight.vue"),
 };
 export default {
   props: {

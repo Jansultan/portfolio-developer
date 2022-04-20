@@ -1,6 +1,6 @@
 <template>
   <div class="services-container">
-    <h1>my services</h1>
+    <h1 :class="{ 'dark-color': $store.state.isLightmode }">my services</h1>
     <p>
       Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
       Velit officia consequat duis enim velit mollit. lorem ipsum
@@ -8,17 +8,27 @@
     <div class="services-container__info">
       <div class="services-info__block">
         <div class="services-info__block__inner">
-          <div class="info__block-box">
+          <div
+            class="info__block-box"
+            :class="{ 'dark-700': $store.state.isLightmode }"
+          >
             <coding class="icon" />
-            <h4>web development</h4>
+            <h4 :class="{ 'dark-color': $store.state.isLightmode }">
+              web development
+            </h4>
             <span>blog, e-commerce</span>
           </div>
-          <div class="info__block-box-back">
-            <h4>Web Development</h4>
-            <span
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
-              nulla diam in ac dictum a urna viverra morbi.</span
-            >
+          <div
+            class="info__block-box-back"
+            :class="{ 'dark-700': $store.state.isLightmode }"
+          >
+            <h4 :class="{ 'dark-color': $store.state.isLightmode }">
+              Web Development
+            </h4>
+            <span>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
+              nulla diam in ac dictum a urna viverra morbi.
+            </span>
             <p>
               <a href="#!"
                 >ORDER NOW <b-icon icon="arrow-right-short" scale="1.3"></b-icon
@@ -29,17 +39,27 @@
       </div>
       <div class="services-info__block">
         <div class="services-info__block__inner">
-          <div class="info__block-box">
+          <div
+            class="info__block-box"
+            :class="{ 'dark-700': $store.state.isLightmode }"
+          >
             <uiux class="icon" />
-            <h4>uI/uX design</h4>
+            <h4 :class="{ 'dark-color': $store.state.isLightmode }">
+              uI/uX design
+            </h4>
             <span>Mobile app, website design</span>
           </div>
-          <div class="info__block-box-back">
-            <h4>uI/uX design</h4>
-            <span
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
-              nulla diam in ac dictum a urna viverra morbi.</span
-            >
+          <div
+            class="info__block-box-back"
+            :class="{ 'dark-700': $store.state.isLightmode }"
+          >
+            <h4 :class="{ 'dark-color': $store.state.isLightmode }">
+              uI/uX design
+            </h4>
+            <span>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
+              nulla diam in ac dictum a urna viverra morbi.
+            </span>
             <p>
               <a href="#!"
                 >ORDER NOW <b-icon icon="arrow-right-short" scale="1.3"></b-icon
@@ -50,17 +70,27 @@
       </div>
       <div class="services-info__block">
         <div class="services-info__block__inner">
-          <div class="info__block-box">
+          <div
+            class="info__block-box"
+            :class="{ 'dark-700': $store.state.isLightmode }"
+          >
             <microphone class="icon" />
-            <h4>sound design</h4>
+            <h4 :class="{ 'dark-color': $store.state.isLightmode }">
+              sound design
+            </h4>
             <span>Voice Over, Beat Making</span>
           </div>
-          <div class="info__block-box-back">
-            <h4>sound design</h4>
-            <span
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
-              nulla diam in ac dictum a urna viverra morbi.</span
-            >
+          <div
+            class="info__block-box-back"
+            :class="{ 'dark-700': $store.state.isLightmode }"
+          >
+            <h4 :class="{ 'dark-color': $store.state.isLightmode }">
+              sound design
+            </h4>
+            <span>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
+              nulla diam in ac dictum a urna viverra morbi.
+            </span>
             <p>
               <a href="#!"
                 >ORDER NOW <b-icon icon="arrow-right-short" scale="1.3"></b-icon
@@ -71,17 +101,27 @@
       </div>
       <div class="services-info__block">
         <div class="services-info__block__inner">
-          <div class="info__block-box">
+          <div
+            class="info__block-box"
+            :class="{ 'dark-700': $store.state.isLightmode }"
+          >
             <gameDevelopment class="icon" />
-            <h4>game design</h4>
+            <h4 :class="{ 'dark-color': $store.state.isLightmode }">
+              game design
+            </h4>
             <span>Character Design, Props & Objects</span>
           </div>
-          <div class="info__block-box-back">
-            <h4>game design</h4>
-            <span
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
-              nulla diam in ac dictum a urna viverra morbi.</span
-            >
+          <div
+            class="info__block-box-back"
+            :class="{ 'dark-700': $store.state.isLightmode }"
+          >
+            <h4 :class="{ 'dark-color': $store.state.isLightmode }">
+              game design
+            </h4>
+            <span>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
+              nulla diam in ac dictum a urna viverra morbi.
+            </span>
             <p>
               <a href="#!"
                 >ORDER NOW <b-icon icon="arrow-right-short" scale="1.3"></b-icon
@@ -92,17 +132,27 @@
       </div>
       <div class="services-info__block">
         <div class="services-info__block__inner">
-          <div class="info__block-box">
+          <div
+            class="info__block-box"
+            :class="{ 'dark-700': $store.state.isLightmode }"
+          >
             <photographer class="icon" />
-            <h4>photography</h4>
+            <h4 :class="{ 'dark-color': $store.state.isLightmode }">
+              photography
+            </h4>
             <span>portrait, product photography</span>
           </div>
-          <div class="info__block-box-back">
-            <h4>photography</h4>
-            <span
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
-              nulla diam in ac dictum a urna viverra morbi.</span
-            >
+          <div
+            class="info__block-box-back"
+            :class="{ 'dark-700': $store.state.isLightmode }"
+          >
+            <h4 :class="{ 'dark-color': $store.state.isLightmode }">
+              photography
+            </h4>
+            <span>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
+              nulla diam in ac dictum a urna viverra morbi.
+            </span>
             <p>
               <a href="#!"
                 >ORDER NOW <b-icon icon="arrow-right-short" scale="1.3"></b-icon
@@ -113,17 +163,27 @@
       </div>
       <div class="services-info__block">
         <div class="services-info__block__inner">
-          <div class="info__block-box">
+          <div
+            class="info__block-box"
+            :class="{ 'dark-700': $store.state.isLightmode }"
+          >
             <addPopUp class="icon" />
-            <h4>advertising</h4>
+            <h4 :class="{ 'dark-color': $store.state.isLightmode }">
+              advertising
+            </h4>
             <span>Voice Over, Beat Making</span>
           </div>
-          <div class="info__block-box-back">
-            <h4>advertising</h4>
-            <span
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
-              nulla diam in ac dictum a urna viverra morbi.</span
-            >
+          <div
+            class="info__block-box-back"
+            :class="{ 'dark-700': $store.state.isLightmode }"
+          >
+            <h4 :class="{ 'dark-color': $store.state.isLightmode }">
+              advertising
+            </h4>
+            <span>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
+              nulla diam in ac dictum a urna viverra morbi.
+            </span>
             <p>
               <a href="#!"
                 >ORDER NOW <b-icon icon="arrow-right-short" scale="1.3"></b-icon

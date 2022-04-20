@@ -1,11 +1,16 @@
 <template>
   <div class="portfolio-container">
-    <h1>Portfolio</h1>
+    <h1 :class="{ 'dark-color': $store.state.isLightmode }">Portfolio</h1>
     <p>
       Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
       Velit officia consequat duis enim velit mollit. lorem ipsum
     </p>
-    <b-tabs active-nav-item-class="active-tab" lazy class="tabs-block">
+    <b-tabs
+      active-nav-item-class="active-tab"
+      lazy
+      class="tabs-block"
+      :class="{ 'dark-color': $store.state.isLightmode }"
+    >
       <b-tab
         v-for="(tab, i) in tabs"
         :key="`tab-${tab.id}`"
@@ -30,7 +35,7 @@
                   icon="plus"
                   scale="4"
                   animation="throb"
-                  variant="dark"
+                  :variant="`${$store.state.isLightmode ? 'light' : 'dark'}`"
                 ></b-icon>
               </div>
             </a>
@@ -195,6 +200,7 @@ export default {
     .tab-content-wrapper {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       .tab-image {
         width: 310px !important;
         height: 300px !important;
@@ -222,6 +228,12 @@ export default {
           transform: translateY(-20%);
         }
       }
+    }
+  }
+  .dark-color {
+    ::v-deep .nav-tabs .nav-item .nav-link {
+      color: var(--v-color-gray-300) !important;
+      transition: all 200ms ease-in 0s;
     }
   }
 }

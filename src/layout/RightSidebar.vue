@@ -1,8 +1,20 @@
 <template>
   <div class="right-sidebar-container">
-    <div class="right-sidebar">
+    <div
+      class="right-sidebar"
+      :class="{ 'dark-700': $store.state.isLightmode }"
+    >
       <div class="right-sidebar-contrast">
-        <b-icon icon="circle-half" class="rounded-circle"></b-icon>
+        <div
+          v-if="$store.state.isLightmode"
+          @click="changeMode(false)"
+          class="rounded-circle"
+        >
+          <contrastLight />
+        </div>
+        <div @click="changeMode(true)" class="rounded-circle" v-else>
+          <contrastDark />
+        </div>
       </div>
       <div class="right-sidebar__inner">
         <b-button
@@ -22,8 +34,11 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
+import contrastLight from "../icons/contrastLight.vue";
+import contrastDark from "../icons/contrastDark.vue";
 export default {
-  components: {},
+  components: { contrastLight, contrastDark },
   data() {
     return {
       rightSidebars: [
@@ -37,7 +52,20 @@ export default {
     };
   },
   mounted() {
-    console.log(this.$route.name);
+    const isLightmode = JSON.parse(localStorage.getItem("lightmode"));
+    if (isLightmode === null) {
+      localStorage.setItem("lightmode", true);
+      this.setLightmode(true);
+    } else {
+      this.setLightmode(!!isLightmode);
+    }
+  },
+  methods: {
+    changeMode(isLightmode) {
+      localStorage.setItem("lightmode", isLightmode);
+      this.setLightmode(isLightmode);
+    },
+    ...mapMutations(["setLightmode"]),
   },
 };
 </script>
@@ -53,6 +81,7 @@ export default {
     background: var(--v-color-gray-300);
     position: fixed;
     box-shadow: 4px 0px 10px rgba(47, 122, 249, 0.1);
+    transition: all 300ms ease-in 0s;
     flex-direction: column;
     display: flex;
     &__inner {

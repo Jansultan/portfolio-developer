@@ -1,6 +1,6 @@
 <template>
   <div class="contact-container">
-    <h1>Contact</h1>
+    <h1 :class="{ 'dark-700': $store.state.isLightmode }">Contact</h1>
     <p>
       Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
       Velit officia consequat duis enim velit mollit. lorem ipsum
