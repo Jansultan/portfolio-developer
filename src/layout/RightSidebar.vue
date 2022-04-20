@@ -54,7 +54,7 @@ export default {
   mounted() {
     const isLightmode = JSON.parse(localStorage.getItem("lightmode"));
     if (isLightmode === null) {
-      localStorage.setItem("lightmode", true);
+      localStorage.setItem("lightmode", false);
       this.setLightmode(true);
     } else {
       this.setLightmode(!!isLightmode);
