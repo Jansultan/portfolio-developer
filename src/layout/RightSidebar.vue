@@ -55,7 +55,7 @@ export default {
     const isLightmode = JSON.parse(localStorage.getItem("lightmode"));
     if (isLightmode === null) {
       localStorage.setItem("lightmode", false);
-      this.setLightmode(true);
+      this.setLightmode(false);
     } else {
       this.setLightmode(!!isLightmode);
     }
